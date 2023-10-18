@@ -1,5 +1,6 @@
-﻿# Useful for bypassing family sharing restrictions
-# Allows you to still play games even when someone is using your library
+﻿# NEEDS ADMIN PERMISSIONS
+# Useful for bypassing family sharing restrictions
+# Allows you to still play games even when someone is using your library 
 
 # You might need to change the paths if you have your Steam installed in a custom directory
 
