@@ -7,6 +7,14 @@ $downloads_folder_path = "C:\Users\Albertus\Downloads"
 # change this to the folder you want to move the backups to
 $move_to_path = "F:\Backups\Browser Backups\Simple Tab Groups Backups"
 
+# Hides the window, since -windowstyle hidden doesn't work with Windows Terminal
+$script:showwindowAsync = Add-Type -memberDefinition @"
+[DllImport ("user32.dll")]
+public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdshow);
+"@ -name "Win32ShowWindowAsync" -namespace Win32Functions -passThru
+
+$showwindowAsync: : ShowWindowAsync( (Get-Process -id $pid).MainWindowHandle, 2)
+
 # specify the path to the folder you want to monitor:
 $Path = $downloads_folder_path
 
